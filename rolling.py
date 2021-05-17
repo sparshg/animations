@@ -106,7 +106,7 @@ class Test(MovingCameraScene):
             AnimationGroup(FadeIn(ground), Write(wheel), run_time=2, lag_ratio=0.5)
         )
         self.wait(0.5)
-        self.play(AnimationGroup(Write(head), Wiggle(wheel, 1, 0, 0.4), lag_ratio=0.5))
+        self.play(AnimationGroup(Write(head), ShiftWiggle(wheel), lag_ratio=0.5))
         self.play(
             wheel.animate.shift(4 * LEFT),
             ground[0].animate.shift(4 * LEFT),
@@ -442,3 +442,23 @@ class RotatingAndShifting(Rotating):
     def interpolate_mobject(self, alpha):
         self.mobject.become(self.starting_mobject)
         self.mobject.rotate(alpha * self.radians).shift(alpha * self.shift)
+
+
+class ShiftWiggle(Wiggle):
+    def __init__(
+        self,
+        mobject,
+        amp: float = 0.4,
+        direction: np.ndarray = RIGHT,
+        n_wiggles: int = 6,
+        run_time: float = 2,
+        **kwargs
+    ):
+        self.amp = amp
+        self.direction = direction
+        self.n_wiggles = n_wiggles
+        super().__init__(mobject, 1, 0, run_time=run_time, **kwargs)
+
+    def interpolate_submobject(self, submobject, starting_submobject, alpha):
+        submobject.points[:, :] = starting_submobject.points
+        submobject.shift(wiggle(alpha, self.n_wiggles) * self.amp * self.direction)
