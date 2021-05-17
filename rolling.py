@@ -157,7 +157,7 @@ class Test(MovingCameraScene):
 
         # Reverse start slow-mo
         d = 4
-        k = -1.01
+        k *= -1
         self.play(
             wheel.animate.shift(d * RIGHT),
             FadeOut(v),
@@ -232,7 +232,7 @@ class Test(MovingCameraScene):
 
         # Reverse start slow-mo
         d = TAU * 0.75
-        k = -1.05
+        k *= -1
         self.play(Uncreate(v), Unwrite(omega), run_time=0.2)
         self.play(
             Rotating(wheel, OUT, -d),
@@ -276,7 +276,7 @@ class Test(MovingCameraScene):
         k = 1.005
         self.play(
             RotatingAndShifting(wheel, d * RIGHT, -d / 1.2),
-            self.camera.frame.animate.scale(0.7).shift(DOWN),
+            self.camera.frame.animate.scale(0.7).shift(1.5 * DOWN),
             rate_func=get_slow_mo(k),
             run_time=d * time_adj(k) / wheel.speed,
         )
@@ -393,7 +393,7 @@ class Test(MovingCameraScene):
 
         # Reverse start slow-mo
         d = TAU * 0.75
-        k = -1.001
+        k *= -1
         self.play(
             FadeOut(vv5),
             FadeOut(vv2),
