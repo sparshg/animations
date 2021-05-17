@@ -113,7 +113,7 @@ class Test(MovingCameraScene):
         )
 
         # Start slow-mo
-        d = 2.5
+        d = 3
         k = 1.01
         self.play(
             wheel.animate.shift(d * RIGHT),
@@ -273,7 +273,7 @@ class Test(MovingCameraScene):
 
         # Start slow-mo
         d = 3.8
-        k = 1.001
+        k = 1.005
         self.play(
             RotatingAndShifting(wheel, d * RIGHT, -d / 1.2),
             self.camera.frame.animate.scale(0.7).shift(DOWN),
@@ -291,14 +291,14 @@ class Test(MovingCameraScene):
             *[
                 Vector(RIGHT / 2, color=BLUE_D)
                 .shift(RIGHT * 1.06)
-                .rotate_about_origin(-PI / 2 * i + PI / 1.9)
+                .rotate_about_origin(-PI / 2 * i + PI / 1.8)
                 for i in [0, 1, 2, 2.5]
             ],
             *[
                 Vector(RIGHT / 2, color=RED)
                 .shift(RIGHT * 1.06)
                 .rotate(-PI / 2, about_point=(RIGHT * 1.06))
-                .rotate_about_origin(-PI / 2 * i + PI / 1.9)
+                .rotate_about_origin(-PI / 2 * i + PI / 1.8)
                 for i in [0, 1, 2, 2.5]
             ],
             Dot(color=WHITE).set_z_index(2),
@@ -306,7 +306,7 @@ class Test(MovingCameraScene):
                 Dot(color=WHITE)
                 .set_z_index(2)
                 .shift(RIGHT * 1.06)
-                .rotate_about_origin(-PI / 2 * i + PI / 1.9)
+                .rotate_about_origin(-PI / 2 * i + PI / 1.8)
                 for i in [0, 1, 2, 2.5]
             ],
         )
