@@ -404,7 +404,7 @@ class Test(MovingCameraScene):
             FadeOut(t4),
             # run_time=0.4,
             RotatingAndShifting(wheel, d * RIGHT, -d / 1.2),
-            self.camera.frame.animate.shift(UP).scale(1.428),
+            self.camera.frame.animate.shift(1.5 * UP).scale(1 / 0.7),
             rate_func=get_slow_mo(k),
             run_time=d * time_adj(k) / wheel.speed,
         )
