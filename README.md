@@ -1,2 +1,2 @@
-# animations
-Animations made using manim-ce
+# ManimCE Animations
+Animations made using [manim-ce](https://manim.community)
