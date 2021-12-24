@@ -33,7 +33,7 @@ class Test(MovingCameraScene):
             DashedLine(
                 start=ground_len * LEFT,
                 end=(ground_len + 12) * RIGHT,
-                positive_space_ratio=0.4,
+                dashed_ratio=0.4,
                 dash_length=0.2,
                 color=BLACK,
             ).shift(2.5 * DOWN)
