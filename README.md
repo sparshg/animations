@@ -4,4 +4,5 @@ The code turned out to be a bit complicated than expected.. It can be  greatly s
 
 [See anims on youtube](https://youtube.com/c/Radiium)
 
-![Rolling](demo/Rolling.gif)
+<img src=demo/Rolling.gif width=640>
+<img src=demo/Pendulums.gif width=640>
