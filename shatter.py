@@ -23,7 +23,6 @@ class Test(SpaceScene, MovingCameraScene):
         ChangeSpeed.add_updater(self.space, lambda space, dt: space.space.step(dt))
 
     def construct(self):
-        global SLOWMODE
         config = {"stroke_color": SLATE, "stroke_width": 2, "stroke_opacity": 0.2}
         grid = NumberPlane(
             background_line_style=config,
